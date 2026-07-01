@@ -1,5 +1,19 @@
-dataset/
+# model weights (too large for plain git; use Git LFS or external hosting)
 *.pth
-*.png
+*.pt
+
+# python
 __pycache__/
+*.pyc
 .venv/
+venv/
+
+# data
+dataset/
+*.log
+training_log.txt
+
+# os
+.DS_Store
+humanparsing/
+humanparsing_dataset/

@@ -1,0 +1,97 @@
+Dataset Information:
+  Train samples : 16706
+  Valid samples : 500
+  Test  samples : 500
+  Number of classes : 20
+  Batch size        : 4
+
+Class index mapping:
+   0: background
+   1: hat
+   2: hair
+   3: glove
+   4: sunglasses
+   5: upper_clothes
+   6: dress
+   7: coat
+   8: socks
+   9: pants
+  10: jumpsuits
+  11: scarf
+  12: skirt
+  13: face
+  14: left_arm
+  15: right_arm
+  16: left_leg
+  17: right_leg
+  18: left_shoe
+  19: right_shoe
+
+
+Epoch [  1/20]  Train Loss: 0.3806  |  Val Loss: 0.2141
+  ✓ Best model saved (val_loss=0.2141)
+Epoch [  2/20]  Train Loss: 0.2288  |  Val Loss: 0.1983
+  ✓ Best model saved (val_loss=0.1983)
+Epoch [  3/20]  Train Loss: 0.2082  |  Val Loss: 0.1827
+  ✓ Best model saved (val_loss=0.1827)
+Epoch [  4/20]  Train Loss: 0.1961  |  Val Loss: 0.1797
+  ✓ Best model saved (val_loss=0.1797)
+Epoch [  5/20]  Train Loss: 0.1873  |  Val Loss: 0.1731
+  ✓ Best model saved (val_loss=0.1731)
+Epoch [  6/20]  Train Loss: 0.1802  |  Val Loss: 0.1703
+  ✓ Best model saved (val_loss=0.1703)
+Epoch [  7/20]  Train Loss: 0.1734  |  Val Loss: 0.1688
+  ✓ Best model saved (val_loss=0.1688)
+Epoch [  8/20]  Train Loss: 0.1689  |  Val Loss: 0.1727
+^R                         
+Epoch [  9/20]  Train Loss: 0.1645  |  Val Loss: 0.1613
+  ✓ Best model saved (val_loss=0.1613)
+Epoch [ 10/20]  Train Loss: 0.1608  |  Val Loss: 0.1571
+  ✓ Best model saved (val_loss=0.1571)
+Epoch [ 11/20]  Train Loss: 0.1568  |  Val Loss: 0.1657
+Epoch [ 12/20]  Train Loss: 0.1538  |  Val Loss: 0.1629
+Epoch [ 13/20]  Train Loss: 0.1509  |  Val Loss: 0.1628
+Epoch [ 14/20]  Train Loss: 0.1481  |  Val Loss: 0.1584
+Epoch [ 15/20]  Train Loss: 0.1470  |  Val Loss: 0.1516
+  ✓ Best model saved (val_loss=0.1516)
+Epoch [ 16/20]  Train Loss: 0.1444  |  Val Loss: 0.1550
+Epoch [ 17/20]  Train Loss: 0.1423  |  Val Loss: 0.1655
+Epoch [ 18/20]  Train Loss: 0.1392  |  Val Loss: 0.1520
+Epoch [ 19/20]  Train Loss: 0.1382  |  Val Loss: 0.1603
+Epoch [ 20/20]  Train Loss: 0.1369  |  Val Loss: 0.1606
+Loaded best model weights for evaluation.
+
+Test - Segmentation Evaluation:
+============================================================
+
+CORE METRICS:
+  Loss           : 0.1646
+  Pixel Accuracy : 93.94%
+  Mean IoU       : 0.5445
+  Mean Dice      : 0.6774
+
+ERROR ANALYSIS:
+  Zero-IoU Rate       : 3.63%  (class present, never predicted)
+  False-Positive Rate : 8.10%  (class predicted, absent in GT)
+
+PER-CLASS IoU & DICE:
+  background           IoU: 0.9769  Dice: 0.9883
+  hat                  IoU: 0.6417  Dice: 0.7817
+  hair                 IoU: 0.7658  Dice: 0.8674
+  glove                IoU: 0.5316  Dice: 0.6942
+  sunglasses           IoU: 0.7772  Dice: 0.8746
+  upper_clothes        IoU: 0.6500  Dice: 0.7879
+  dress                IoU: 0.7533  Dice: 0.8593
+  coat                 IoU: 0.6109  Dice: 0.7584
+  socks                IoU: 0.3837  Dice: 0.5546
+  pants                IoU: 0.2315  Dice: 0.3760
+  jumpsuits            IoU: 0.2838  Dice: 0.4421
+  scarf                IoU: 0.8051  Dice: 0.8920
+  skirt                IoU: 0.2599  Dice: 0.4126
+  face                 IoU: 0.4153  Dice: 0.5869
+  left_arm             IoU: 0.2027  Dice: 0.3371
+  right_arm            IoU: 0.3662  Dice: 0.5361
+  left_leg             IoU: 0.6838  Dice: 0.8122
+  right_leg            IoU: 0.4612  Dice: 0.6313
+  left_shoe            (not in test set)
+  right_shoe           (not in test set)
