@@ -38,15 +38,23 @@ Each row shows: input image → ground truth mask → model prediction.
 
 ## Development process
 
-My first full training run (20 epochs) plateaued near the random-guess baseline for
+My first training run (4 epochs) plateaued near the random-guess baseline for
 20 classes (loss ~2.6–2.9, vs. a theoretical random baseline of ~3.0) — predictions
 were essentially noise:
 
 ![First run prediction](results/first_run_20epoch/prediction_0.png)
 ![First run training curve](results/first_run_20epoch/training_curve_first_run.png)
 
-After debugging the pipeline, I retrained and got the results below — a large jump
-in both loss and prediction quality.
+After debugging the pipeline, I retrained for 20 epochs with a ResNet50 encoder and
+got the results below — a large jump in both loss and prediction quality.
+
+**Currently in progress:** testing a ResNet34 encoder (lighter/faster than ResNet50)
+to compare accuracy and training time. The main open challenge is distinguishing the
+human body from clothing when they're visually similar or heavily overlapping (e.g.
+skin-tone vs. skin-tight clothing, arms occluded by sleeves) — this shows up in the
+per-class results as lower IoU for limbs (`left_arm`: 0.20, `right_arm`: 0.37) and
+close-fitting garments (`pants`: 0.23, `skirt`: 0.26) compared to more visually
+distinct classes.
 
 ## Model
 
@@ -79,19 +87,6 @@ fashion-segmentation/
 
 Expects data in the following layout:
 
-```
-dataset/
-├── Train/
-│   ├── images/
-│   └── masks/
-├── Valid/
-│   ├── images/
-│   └── masks/
-└── Test/
-    ├── images/
-    └── masks/
-```
-
 Train:
 ```bash
 python src/fashion_combined.py
@@ -105,6 +100,21 @@ python src/fashion_eval.py
 ## Model weights
 
 The trained checkpoint (`fashion_seg_best.pth`, ~125 MB) is not included in this repo.
+
+## Use cases
+
+Pixel-level clothing/body segmentation like this is useful for:
+
+- **Virtual try-on / outfit swapping** - isolating garments from a photo to overlay
+  new clothing or preview outfits
+- **E-commerce catalog automation** - auto-cropping/tagging product photos by
+  garment type, or removing backgrounds from model shots
+- **Fashion recommendation systems** - extracting structured info (what someone is
+  wearing, and where) from user-uploaded photos
+- **Size/fit estimation** - combining body-part masks (arms, legs, torso) with pose
+  data to estimate proportions from a single photo
+- **Content moderation / analytics** - detecting clothing categories at scale across
+  large image sets
 
 ## Requirements
 
