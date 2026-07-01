@@ -8,7 +8,8 @@ trained with a U-Net decoder over a ResNet encoder.
 
 ## Results
 
-Evaluated on a held-out test set of 500 images:
+Trained on 16,706 images, with 500 held out for validation and 500 for final testing
+(all drawn from the human parsing dataset). Metrics below are from the held-out test set:
 
 | Metric | Value |
 |---|---|
@@ -34,6 +35,18 @@ Each row shows: input image → ground truth mask → model prediction.
 ![Prediction 3](results/prediction_2.png)
 ![Prediction 4](results/prediction_3.png)
 ![Prediction 5](results/prediction_4.png)
+
+## Development process
+
+My first full training run (20 epochs) plateaued near the random-guess baseline for
+20 classes (loss ~2.6–2.9, vs. a theoretical random baseline of ~3.0) — predictions
+were essentially noise:
+
+![First run prediction](results/first_run_20epoch/prediction_0.png)
+![First run training curve](results/first_run_20epoch/training_curve_first_run.png)
+
+After debugging the pipeline, I retrained and got the results below — a large jump
+in both loss and prediction quality.
 
 ## Model
 
