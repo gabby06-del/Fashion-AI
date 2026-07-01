@@ -116,6 +116,16 @@ Pixel-level clothing/body segmentation like this is useful for:
 - **Content moderation / analytics** - detecting clothing categories at scale across
   large image sets
 
+## Dataset
+
+Trained on the [Human Parsing Dataset](https://github.com/lemondan/HumanParsing-Dataset)
+(the ATR dataset), introduced in:
+
+- Liang et al., *"Deep Human Parsing with Active Template Regression,"* IEEE TPAMI, 2015.
+- Liang et al., *"Human Parsing with Contextualized Convolutional Neural Network,"* ICCV 2015.
+
+Full dataset citation and download link available in the linked repo.
+
 ## Requirements
 
 ```
