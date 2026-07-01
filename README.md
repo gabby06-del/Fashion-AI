@@ -105,7 +105,6 @@ python src/fashion_eval.py
 ## Model weights
 
 The trained checkpoint (`fashion_seg_best.pth`, ~125 MB) is not included in this repo.
-[Add a download link here once hosted, e.g. on Hugging Face Hub or Google Drive.]
 
 ## Requirements
 
